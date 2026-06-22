@@ -1,23 +1,795 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+    <!-- JSON-LD Structured Data for Naver and Google Search Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "자동차보험 자기부담금 완벽 가이드",
+        "url": "https://example.com/car-insurance-deductible",
+        "description": "자동차보험 자차 자기부담금 20%와 30%의 차이점, 수리비 대비 최저 및 최대 한도액 계산법, 2026년 최신 다이렉트 자동차보험 비교 가이드.",
+        "author": {
+            "@type": "Organization",
+            "name": "자동차 보험 정보 분석 연구소"
+        },
+        "mainEntity": {
+            "@type": "Article",
+            "headline": "자동차보험 자기부담금의 모든 것: 계산법부터 현명한 자차 처리 방법까지",
+            "articleBody": "자차 보험 처리 시 발생하는 자기부담금은 수리비의 일정 비율을 가입자가 직접 부담하는 제도입니다. 본 가이드에서는 20%와 30%의 차이점 및 장단점을 명확히 비교하며, 2026년 달라진 제도와 연령별, 모델별 예상 보험료 및 최적의 설계 방안을 다룹니다.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "종합 보험 가이드 포털",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://example.com/images/insurance-logo.png"
+                }
+            },
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-06-22"
+        }
+    }
+    </script>
+
+    <style>
+        /* Modern Soft Pastel Theme Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f7f9;
+            color: #2c3e50;
+            line-height: 1.85;
+            word-break: keep-all;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 50px 8%;
+            text-align: center;
+            border-bottom: 3px solid #e2ebf0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        header h1 {
+            color: #1a365d;
+            font-size: 2.4em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.15em;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-header-button {
+            display: inline-block;
+            background-color: #0d9488;
+            color: #ffffff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.05em;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(13, 148, 136, 0.2);
+        }
+
+        .cta-header-button:hover {
+            background-color: #0f766e;
+        }
+
+        nav {
+            background-color: #1e293b;
+            padding: 12px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 5px 12px;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #f1f5f9;
+        }
+
+        section h2 {
+            color: #0f172a;
+            font-size: 1.8em;
+            font-weight: 700;
+            border-left: 6px solid #0d9488;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            letter-spacing: -0.3px;
+        }
+
+        section h3 {
+            color: #1e293b;
+            font-size: 1.35em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05em;
+            color: #334155;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: #475569;
+            font-size: 1.02em;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #0d9488;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Callout Box Style */
+        .callout-box {
+            background-color: #f0fdfa;
+            border-left: 5px solid #0f766e;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .callout-box p {
+            margin: 0;
+            color: #115e59;
+            font-weight: 500;
+        }
+
+        /* Interactive Calculator Styling */
+        .calculator-container {
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 35px;
+            margin: 35px 0;
+        }
+
+        .calculator-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .form-group input[type="number"], .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #1e293b;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input[type="number"]:focus, .form-group select:focus {
+            border-color: #0d9488;
+            outline: none;
+        }
+
+        .calc-btn {
+            width: 100%;
+            background-color: #0d9488;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .calc-btn:hover {
+            background-color: #0f766e;
+        }
+
+        .calc-result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: none;
+        }
+
+        .calc-result p {
+            margin: 8px 0;
+            font-size: 1.05em;
+        }
+
+        /* Visual Table Styling */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+        }
+
+        th {
+            background-color: #0f766e;
+            color: #ffffff;
+            padding: 14px 18px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 0.98em;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: 0.95em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Consulting Form Style */
+        .consult-form {
+            background-color: #ffffff;
+            border: 2px solid #0d9488;
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .consult-form h3 {
+            margin-top: 0;
+            color: #0f766e;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .consult-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .consult-grid {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 30px 20px;
+            }
+            header {
+                padding: 40px 20px;
+            }
+        }
+
+        .consult-group {
+            margin-bottom: 15px;
+        }
+
+        .consult-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .consult-group input, .consult-group select, .consult-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 0.95em;
+        }
+
+        .consult-submit {
+            background-color: #0f766e;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.05em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .consult-submit:hover {
+            background-color: #115e59;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 5%;
+            margin-top: 60px;
+            border-top: 1px solid #334155;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 0.9em;
+            margin: 5px 0;
+            color: #94a3b8;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .external-links-section ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0;
+        }
+
+        .external-links-section ul li {
+            padding-left: 0;
+        }
+
+        .external-links-section ul li::before {
+            display: none;
+        }
+
+        .external-links-section ul li a {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: #0f766e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .external-links-section ul li a:hover {
+            background-color: #0d9488;
+            color: #ffffff;
+            border-color: #0d9488;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>자동차보험 자기부담금 완벽 가이드</h1>
+        <p>자차 처리 시 발생하는 자기부담금의 모든 것. 20%와 30% 비율의 세밀한 차이점부터 2026년 최신 보험 제도 변화, 영리한 환급 팁 및 연령별 예상 절약 견적까지 상세히 알려드립니다.</p>
+        <a href="#consulting-anchor" class="cta-header-button">1대1 맞춤형 무료 설계 컨설팅 신청</a>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#intro-section">자기부담금 정의</a></li>
+            <li><a href="#comparison-section">20% vs 30% 차이</a></li>
+            <li><a href="#calc-section">실시간 계산기</a></li>
+            <li><a href="#demographics-section">차종/연령별 가이드</a></li>
+            <li><a href="#strategy-section">현명한 자차 처리</a></li>
+            <li><a href="#faq-section">자주 묻는 질문</a></li>
+            <li><a href="#consulting-anchor">컨설팅 신청</a></li>
+        </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <div class="container">
+
+        <!-- Section 1: Introduction to Deductibles -->
+        <section id="intro-section">
+            <h2>자동차보험 자기부담금이란 무엇이며 왜 존재할까요?</h2>
+            <p>도로를 주행하다 보면 예기치 못한 사고로 차량이 손상되는 안타까운 상황에 직면하곤 합니다. 이때 본인이 가입한 자동차보험의 자기차량손해(이하 자차) 특약을 통해 수리 비용을 보장받을 수 있습니다. 하지만 이 과정에서 가입자가 전액을 지원받는 것은 아닙니다. 일정 수준의 수리 금액은 차주 본인이 직접 부담해야 하는데, 이를 바로 자동차보험 자기부담금이라고 정의합니다.</p>
+            <p>이러한 공제 제도가 존재하는 근본적인 이유는 과잉 진료와 유사한 형태의 무분별한 과잉 정비를 방지하고, 운전자의 도덕적 해이를 막기 위함입니다. 만약 자기부담금이 전혀 없다면 경미한 스크래치나 미미한 찌그러짐에도 매번 자차 처리를 신청하여 보험사의 재정 건전성이 크게 악화될 것입니다. 이는 결국 전체 보험 가입자의 보험료 인상이라는 부메랑으로 돌아오게 됩니다. 따라서 금융감독원과 보험사들은 합리적인 요율을 유지하기 위해 최소한의 제어 장치로서 이 제도를 운영하고 있습니다.</p>
+            <p>많은 운전자분들이 자동차 사고 시 발생하는 자차 수리 비용을 효율적으로 처리하기 위해 네이버나 구글, 유튜브 등에서 정보를 검색하고 있습니다. 특히 보배드림, 디시, 펨코(에펨코리아) 같은 자동차 전문 온라인 커뮤니티에서는 실제 자차 처리 내돈내산 후기들을 공유하며, 어떤 다이렉트 자동차보험 브랜드가 가장 합리적인 혜택을 주는지 활발히 소통하고 있습니다. 최근에는 토스 앱이나 다양한 핀테크 보험 비교 어플을 사용하여 실시간 예상 금액을 셀프로 계산해보는 운전자도 급증하고 있습니다. 더불어 제미나이(Gemini)나 챗지피티(ChatGPT) 같은 인공지능 AI 기술을 이용해 각 보험사의 특약 종류와 순위를 꼼꼼하게 비교 분석하여 추천받는 스마트한 자차 관리 방식이 트렌드로 부상하고 있습니다.</p>
+        </section>
+
+        <!-- Section 2: 20% vs 30% Detailed Comparison -->
+        <section id="comparison-section">
+            <h2>자기부담금 비율 20%와 30% 선택의 기로: 장단점과 차이점</h2>
+            <p>자동차보험에 가입하거나 매년 갱신을 준비할 때, 운전자는 자기부담금 비율을 20%로 설정할지 혹은 30%로 설정할지 선택해야 합니다. 대다수의 가입자는 기본 설정인 20%를 선택하지만, 개별 운전 성향과 차량 가치에 따라 30% 상품이 장기적인 지출 면에서 훨씬 더 이득이 될 수도 있습니다. 두 구간의 명확한 차이점을 파악하는 것이 우선입니다.</p>
+            
+            <h3>1. 자기부담금 비율 20% 안의 구조</h3>
+            <p>가장 대중적인 가입 종류이며 통상 수리비의 20%를 본인이 납부합니다. 이 옵션은 대개 물적사고 할증기준금액을 200만 원으로 설정했을 때, 최소 부담금 20만 원에서 최대 부담금 50만 원 한도로 설정됩니다. 수리비 총액이 100만 원이 나왔다면 20%인 20만 원만 지불하면 되고, 수리비가 400만 원이 나오더라도 설정된 최고 금액인 50만 원까지만 납부하면 나머지 350만 원은 보험사에서 지급하는 안정적인 구조입니다.</p>
+            <p>이 옵션의 장점은 대형 사고가 발생하여 수리비 견적이 수백만 원 이상 고액으로 청구되었을 때 본인 지출액을 최대 50만 원 수준에서 타이트하게 방어할 수 있다는 점입니다. 반면 단점은 매월 혹은 매년 납부하는 본체 자차 보험료 가격이 30% 옵션에 비해 상대적으로 높게 산정된다는 것입니다.</p>
+
+            <h3>2. 자기부담금 비율 30% 안의 구조</h3>
+            <p>수리비의 30%를 본인이 책임지는 대안입니다. 최소 자기부담금은 일반적으로 30만 원에서 시작하며, 최대 한도는 100만 원에서 많게는 200만 원까지 상향 설정됩니다. 만약 동일하게 수리비 100만 원이 발생했다면, 차주는 30만 원을 지급해야 하므로 20% 안보다 10만 원을 더 내야 합니다. 수리비가 400만 원으로 치솟는다면 30% 비율인 120만 원이 아니라, 계약 시 설정한 최대 한도(예: 100만 원)를 전액 직접 납부해야 합니다.</p>
+            <p>이 옵션의 뚜렷한 장점은 자차 특약 가입 시 본체 보험료에 적용되는 할인율이 높아져, 연간 총 보험료 지출을 크게 줄일 수 있다는 점입니다. 안전 운전 습관이 완벽히 몸에 배어 사고 발생률이 지극히 낮은 운전자나 주행 거리가 짧은 차량 소유주에게 아주 매력적인 선택지입니다. 하지만 단점은 불의의 사고로 차량 파손이 심해 견적이 크게 나왔을 때 당장 목돈으로 나가야 하는 수리 비용의 부담이 가중된다는 점입니다.</p>
+
+            <div class="callout-box">
+                <p>요약 가이드: 무사고 경력이 오래되었고 평소 방어 운전을 지향하여 자차 서비스를 쓸 일이 거의 없다고 판단되면 30%를 선택해 연간 가입 비용을 대폭 낮추는 것을 추천합니다. 반면 초보 운전자이거나 고가의 고전압 배터리를 탑재한 친환경 전기차, 수입 외제차를 운행하여 사고 시 부품 가격 부담이 큰 상황이라면 안심할 수 있는 20% 설계안이 유리합니다.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Interactive JS Calculator -->
+        <section id="calc-section">
+            <div class="calculator-container">
+                <div class="calculator-title">실시간 자동차보험 자기부담금 모의 계산기</div>
+                <p style="text-align: center; font-size: 0.95em; color: #64748b;">공업사나 서비스센터에서 받은 예상 수리비를 입력하시면 본인 부담금액을 실시간으로 산출해 드립니다.</p>
+                
+                <div class="form-group">
+                    <label for="calc-repair-cost">예상 차량 수리비 (원 단위 입력)</label>
+                    <input type="number" id="calc-repair-cost" placeholder="예: 1500000" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-ratio">자기부담금 비율 선택</label>
+                    <select id="calc-ratio">
+                        <option value="20">20%형 (최소 20만 원 ~ 최대 50만 원)</option>
+                        <option value="30">30%형 (최소 30만 원 ~ 최대 100만 원)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-limit">물적사고 할증기준 금액</label>
+                    <select id="calc-limit">
+                        <option value="2000000">200만 원 (일반 운전자 다수 선택)</option>
+                        <option value="1500000">150만 원</option>
+                        <option value="1000000">100만 원</option>
+                        <option value="500000">50만 원</option>
+                    </select>
+                </div>
+
+                <button type="button" class="calc-btn" onclick="calculateDeductible()">실시간 자기부담금 계산하기</button>
+
+                <div id="calculator-result" class="calc-result">
+                    <p><strong>수리비 총액:</strong> <span id="res-total" style="color: #0f172a; font-weight: bold;">0</span>원</p>
+                    <p><strong>가입자 실제 납부액 (자기부담금):</strong> <span id="res-my-share" style="color: #e11d48; font-weight: bold; font-size: 1.15em;">0</span>원</p>
+                    <p><strong>보험사 지급 예상액:</strong> <span id="res-insurance-share" style="color: #0d9488; font-weight: bold;">0</span>원</p>
+                    <p><strong>물적사고 할증 여부:</strong> <span id="res-surcharge" style="font-weight: bold;">안전 구간</span></p>
+                    <p style="font-size: 0.85em; color: #64748b; margin-top: 15px; border-top: 1px dashed #cbd5e1; padding-top: 10px;">위 모의 계산 결과는 일반적인 자차 특약 기준 조건에 근거하여 도출된 예상 금액이며, 가입하신 개별 다이렉트 자동차보험사 약관 및 특약 구성에 따라 실 청구액과 미세한 차이가 발생할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Demographic and Model Specific Detailed Analysis -->
+        <section id="demographics-section">
+            <h2>차종 및 연령별 자동차보험료 및 자기부담금 심층 분석 (2026년 가이드)</h2>
+            <p>2026년 현재 국내 자동차보험 시장은 운전자의 실 주행 데이터와 탑재된 ADAS(첨단 운전자 보조 시스템) 성능에 따라 보험료 차등화가 더욱 정교해졌습니다. 만 20세 사회 초년생이 국민 첫 차인 아반떼를 구매해 운행하는 시나리오부터, 안락한 패밀리카의 대명사인 카니발, 고전적인 럭셔리 세단 제네시스 G80, 그리고 폭발적으로 보급된 테슬라 모델Y 전기차를 운행하는 고연령층 시나리오까지 세대별, 모델별로 발생하는 수리 가격의 현실을 분석해보겠습니다.</p>
+            
+            <h3>1. 연령별 운전자의 특징과 보험 가입 패턴</h3>
+            <ul>
+                <li><strong>20대 신규 및 사회초년생 그룹:</strong> 운전 경력이 짧은 20대는 손해율이 가장 높은 나이대이기 때문에 첫 가입 시 다이렉트 견적 비용이 기본적으로 비쌉니다. 아반떼 모델 가입 시 평균 자차 비용을 포함한 전체 예산이 연간 150만 원에서 220만 원 선으로 형성됩니다. 이 시기에는 단 1회의 자차 처리로도 차기 갱신 시 폭발적인 할증 요금이 부과되므로 소액 사고 시에는 자비 수리를 심각하게 고민해야 합니다.</li>
+                <li><strong>30대 패밀리 드라이버 그룹:</strong> 가정을 이루며 쏘렌토나 싼타페 등 준대형 SUV를 선호하는 연령대로서, 비교적 요율이 저렴해지기 시작합니다. 이때 3대 가족 할인 및 자녀 할인 특약을 결합하면 연간 가격이 70만 원에서 110만 원 대로 대폭 내려갑니다.</li>
+                <li><strong>40대와 50대 성숙 운전자 그룹:</strong> 방어 운전 능력과 풍부한 경력 덕분에 최저 수준의 손해율 등급을 적용받습니다. 제네시스 G80 혹은 카니발 리무진 모델 기준으로 50만 원에서 80만 원 선에서 다이렉트 가입이 가능합니다. 이 연령층은 무사고 이력이 수년간 누적되어 있기 때문에 가급적 20% 자기부담금을 유지하면서 불의의 파손 사고 시 자기부담 최대 50만 원 혜택을 온전히 취하는 편이 훨씬 스마트합니다.</li>
+            </ul>
+
+            <h3>2. 주요 대표 차량 모델별 수리비 및 예상 부담금 분석표</h3>
+            <p>차량 제조사의 부품 수급 단가 및 공임 비용 차이로 인해 국산 내연기관차와 수입 외제차, 전기 차량 간의 자차 부담 구조는 하늘과 땅 차이입니다. 아래 표는 2026년 기준 각 모델의 평균적인 도수, 판금 도색, 범퍼 교체 등 수리 단가를 기초로 한 예시 데이터입니다.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>대표 차종</th>
+                            <th>추천 연령대</th>
+                            <th>평균 연간 보험료</th>
+                            <th>다용도 사고 수리비 견적</th>
+                            <th>자차부담액 (20% 가입 시)</th>
+                            <th>자차부담액 (30% 가입 시)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>현대 아반떼 (CN7)</td>
+                            <td>20대 중후반</td>
+                            <td>약 90 ~ 130만 원</td>
+                            <td>80만 원 (앞범퍼 교환)</td>
+                            <td>20만 원 (최소액 적용)</td>
+                            <td>30만 원 (최소액 적용)</td>
+                        </tr>
+                        <tr>
+                            <td>기아 쏘렌토 하이브리드</td>
+                            <td>30대 중반</td>
+                            <td>약 65 ~ 95만 원</td>
+                            <td>180만 원 (측면 도어 판금)</td>
+                            <td>36만 원 (실제 20%)</td>
+                            <td>54만 원 (실제 30%)</td>
+                        </tr>
+                        <tr>
+                            <td>기아 카니발</td>
+                            <td>40대 초반</td>
+                            <td>약 60 ~ 85만 원</td>
+                            <td>240만 원 (후미 슬라이딩 도어)</td>
+                            <td>48만 원 (실제 20%)</td>
+                            <td>72만 원 (실제 30%)</td>
+                        </tr>
+                        <tr>
+                            <td>제네시스 G80 (RG3)</td>
+                            <td>45세 이상</td>
+                            <td>약 75 ~ 110만 원</td>
+                            <td>380만 원 (LED 헤드램프 및 휀더)</td>
+                            <td>50만 원 (최대한도 적용)</td>
+                            <td>100만 원 (최대한도 적용)</td>
+                        </tr>
+                        <tr>
+                            <td>테슬라 모델Y (전기차)</td>
+                            <td>30-40대</td>
+                            <td>약 110 ~ 160만 원</td>
+                            <td>650만 원 (알루미늄 바디 복원)</td>
+                            <td>50만 원 (최대한도 적용)</td>
+                            <td>100만 원 (최대한도 적용)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.88em; color: #64748b; margin-top: -10px;">위 표의 수리 비용과 자기부담금은 통상적인 단독사고 정비 공임을 기준으로 추산한 통계치이며, 공식 대리점 센터 입고 여부와 수리 범위에 따라 달라질 수 있습니다.</p>
+        </section>
+
+        <!-- Section 5: Strategic Self-Damage Claim Management -->
+        <section id="strategy-section">
+            <h2>자차 처리 시 자기부담금을 아끼는 현명한 대응 전략</h2>
+            <p>막상 사고가 발생해 공업사에서 100만 원 상당의 견적서가 날아왔을 때, 이를 즉각적으로 자동차보험 자차 처리를 진행하는 것이 과연 현명한 태도일까요? 숙련된 드라이버들은 무작정 자차 처리를 진행하기 전에 이해득실을 신중하게 따져봅니다.</p>
+
+            <h3>1. 자차 처리의 골든크로스: 50만 원 법칙</h3>
+            <p>차량 손상 수리비가 50만 원 이하의 소액으로 산출되었다면, 자차 처리를 하지 않고 전액 내돈내산 현금 결제나 카드로 직접 공업사에 지출하는 것이 장기적으로 훨씬 이득입니다. 왜냐하면 자차 자기부담금의 최저 기준액이 20% 안 기준 20만 원이기 때문입니다. 실제 수리비가 40만 원인 경우, 보험 처리를 진행하더라도 내가 20만 원을 내고 보험사에서 받는 지원금은 20만 원에 불과합니다. 그러나 이 과정에서 소액 자차 청구 기록 1건이 고스란히 남아 향후 3년간 무사고 할인 혜택이 중단되는 것은 물론, 보험료 갱신 시 오히려 큰 인상폭을 겪게 될 수도 있습니다.</p>
+
+            <h3>2. 물적사고 할증기준금액 200만 원의 비밀</h3>
+            <p>다이렉트 자동차보험 가입 시 거의 모든 운전자가 물적사고 할증기준금액을 200만 원으로 기본 설정합니다. 이는 사고 1건당 보험사가 지급한 자차 및 대물 수리비 총합이 200만 원을 넘지 않는다면, 등급에 따른 큰 할증 요율 상승을 유예하겠다는 약속입니다. 단, 200만 원 이내 사고라 하더라도 직전 3년간 사고 누적 건수가 있다면 무조건 할증을 피할 수 없습니다. 따라서 수리비가 150만 원 수준이 나왔다면 자기부담금 30만 원을 내고 120만 원을 지원받는 자차 처리를 진행하는 것이 경제적으로 유리합니다.</p>
+
+            <h3>3. 대기업 다이렉트 브랜드들의 할인 마케팅 활용</h3>
+            <p>요즘 현대해상, 삼성화재, DB손해보험, KB손해보험, 캐롯손해보험 등 메이저 브랜드들은 온라인 인터넷 전용 다이렉트 가입자를 유치하기 위해 풍성한 프로모션을 적극 전개하고 있습니다. 신규 가입 혜택으로 현금지원, 포인트 백, 네이버페이나 카카오페이 상품권 지급 이벤트를 꾸준히 진행 중입니다. 매년 갱신 시점마다 여러 브랜드 사이트를 번갈아 방문하며 실시간 견적 대조를 하는 행위는 합리적인 소비의 기본입니다.</p>
+        </section>
+
+        <!-- Section 6: FAQ (Frequently Asked Questions) -->
+        <section id="faq-section">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            
+            <h3>Q1. 과거에 제기되었던 자차 자기부담금 환급 소송은 무엇인가요? 지금도 환급받을 수 있나요?</h3>
+            <p>과거에 쌍방 과실 사고 시 상대방 보험사로부터 받아낸 구상금 중 일부를 고객의 자기부담금으로 먼저 충당해야 한다는 논리로 일부 소비자들이 환급 청구 소송을 대대적으로 진행한 이력이 있습니다. 대법원 판례 및 금융감독원의 정형화된 해석에 따르면, 현재는 자차 자기부담금 환급 청구가 사실상 매우 엄격하게 제한되어 있어 실효성이 떨어집니다. 다만, 본인 과실이 없는 완벽한 무과실 낙하물 사고나 단독 불량 도로 파손 등의 특수한 경우에는 정부 보상이나 지자체 영조물 배상 책임을 통해 정비금 환입을 시도할 여지는 여전히 존재합니다.</p>
+
+            <h3>Q2. 수입 외제차의 경우 국산차에 비해 자기부담금이 무조건 높게 발생하나요?</h3>
+            <p>네, 외제차는 기본적으로 독점적인 순정 부품 단가가 비싸고 수리 공임 체계도 고가로 짜여 있습니다. 벤츠나 BMW, 아우디 같은 브랜드는 범퍼 하나만 교환해도 300만 원을 훌쩍 넘기는 경우가 많습니다. 이 때문에 자차 수리비가 최대 구간인 250만 원 이상을 아주 쉽게 초과하므로, 자차 자기부담금은 거의 매번 맥시멈 한도인 50만 원 혹은 그 이상(30% 안의 경우 100만 원 이상)이 확정적으로 청구된다고 생각하셔야 합니다.</p>
+
+            <h3>Q3. 단독 사고로 전봇대나 연석을 들이받았는데 이것도 자차 처리가 되나요?</h3>
+            <p>자신의 단독 과실이나 가해자 불명의 사고도 자차 특약에 가입되어 있다면 당연히 보험 접수 수리가 가능합니다. 단, 단독사고의 경우도 동일하게 20% 또는 30%의 자차 부담 비용률이 즉시 대입되어 부과됩니다. 가끔 야간 주차장에 주차해 둔 차를 누군가 긁고 도망간 물피도주 사고의 경우도 경찰서 신고 접수 후 범인을 찾지 못하면 단독사고와 비슷한 범주로 묶여 자차로 고쳐야 합니다.</p>
+
+            <h3>Q4. 자기부담금을 수리 공업사에서 몰래 깎아주거나 면제해주겠다는 제안은 안전한가요?</h3>
+            <p>길거리 사설 정비 업체나 일부 비양심적인 외형복원 전문 공업사에서 자기부담금을 아예 면제해 주겠다거나 대신 대납해 주겠다고 속여 고객을 유인하는 사례가 더러 있습니다. 그러나 이는 명백한 손해보험업법 위반 및 사기 혐의에 연루될 위험이 다분한 불법 행위입니다. 대개 이러한 업자들은 고객의 부담금을 제로로 만들기 위해 보험사에 청구하는 정비 명세서 금액을 허위로 가공하거나, 멀쩡한 부품까지 부수어 수리비를 부풀리는 수법을 부립니다. 적발될 시 차주 본인 역시 사기죄의 공동 정범으로 연루되어 처벌받을 수 있으니 정직하고 공인된 종합 1급 서비스센터를 통해 정석대로 납부하는 것이 현명합니다.</p>
+        </section>
+
+        <!-- Section 7: Trusted External Links -->
+        <section class="external-links-section">
+            <h2>공인된 공신력 있는 기관 정보 안내</h2>
+            <p>자동차보험 약관의 정석 규정과 정직한 분쟁 사례, 그리고 표준 공임비 요율에 관한 엄격한 법적 가이드라인은 아래의 정부 공식 포털 및 공신력 있는 백과사전 사이트에서 직접 확인하실 수 있습니다.</p>
+            <ul>
+                <li><a href="https://www.fss.or.kr" target="_blank">금융감독원 (FSS)</a></li>
+                <li><a href="https://www.molit.go.kr" target="_blank">국토교통부 (MOLIT)</a></li>
+                <li><a href="https://www.e-insmarket.or.kr" target="_blank">온라인 보험다모아 (보험협회)</a></li>
+                <li><a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%EB%B3%B4%ED%97%98" target="_blank">나무위키: 자동차보험 설명</a></li>
+                <li><a href="https://www.kca.go.kr" target="_blank">한국소비자원 (KCA)</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 8: Lead Generation Form for Dwelling Time Enhancement -->
+        <section id="consulting-anchor">
+            <div class="consult-form">
+                <h3>맞춤형 다이렉트 자동차보험 비교 설계 상담 및 견적 신청</h3>
+                <p style="text-align: center; font-size: 0.95em; color: #475569; margin-bottom: 30px;">나이, 보유하신 차종, 연간 누적 주행거리에 알맞은 최저가 다이렉트 브랜드 순위와 적정 자기부담금 비율을 전문가가 객관적으로 비교 분석해 드립니다.</p>
+                
+                <form id="insurance-lead-form" onsubmit="handleFormSubmit(event)">
+                    <div class="consult-grid">
+                        <div class="consult-group">
+                            <label for="usr-name">신청인 이름</label>
+                            <input type="text" id="usr-name" placeholder="예: 홍길동" required>
+                        </div>
+                        <div class="consult-group">
+                            <label for="usr-tel">연락처 (휴대폰 번호)</label>
+                            <input type="tel" id="usr-tel" placeholder="예: 010-1234-5678" required>
+                        </div>
+                        <div class="consult-group">
+                            <label for="usr-age">운전자 나이 (만 연령)</label>
+                            <select id="usr-age" required>
+                                <option value="">선택해 주세요</option>
+                                <option value="20">만 20세 ~ 24세 (가장 주의가 필요한 신규 연령군)</option>
+                                <option value="25">만 25세 ~ 29세</option>
+                                <option value="30">만 30세 ~ 39세</option>
+                                <option value="40">만 40세 ~ 49세</option>
+                                <option value="50">만 50세 이상</option>
+                            </select>
+                        </div>
+                        <div class="consult-group">
+                            <label for="usr-car">운행 중인 차량 모델 종류</label>
+                            <input type="text" id="usr-car" placeholder="예: 아반떼 CN7, 제네시스 G80, 테슬라 모델Y" required>
+                        </div>
+                        <div class="consult-group">
+                            <label for="usr-mileage">연간 예상 평균 주행거리</label>
+                            <select id="usr-mileage">
+                                <option value="under5k">5,000km 미만 (마일리지 특약 강력 추천)</option>
+                                <option value="mid">5,000km ~ 15,000km 사이</option>
+                                <option value="over15k">15,000km 초과 (출퇴근 전용)</option>
+                            </select>
+                        </div>
+                        <div class="consult-group">
+                            <label for="usr-experience">과거 3년 동안의 자차 사고 수리 이력</label>
+                            <select id="usr-experience">
+                                <option value="none">무사고 (안전 운전자 우대 등급)</option>
+                                <option value="1time">자차 또는 대물 처리 1회</option>
+                                <option value="multiple">잦은 사고 이력 보유 (2회 이상)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="consult-group" style="margin-top: 15px;">
+                        <label for="usr-memo">구체적으로 궁금하신 사항 (선택 사항)</label>
+                        <textarea id="usr-memo" rows="3" placeholder="예: 현대해상과 DB손해보험 다이렉트 중 30대 가격 싼곳을 추천받고 싶습니다. 자기부담금 환급금 반환 여부 등 상담 희망합니다."></textarea>
+                    </div>
+
+                    <div style="margin: 20px 0; font-size: 0.88em; color: #64748b;">
+                        <input type="checkbox" id="privacy-agree" required>
+                        <label href="#" style="display:inline; font-weight:normal; cursor:pointer;" for="privacy-agree">상담 및 견적 산출을 위한 개인정보 수집 및 제3자 제공 동의 (필수 항목)</label>
+                    </div>
+
+                    <button type="submit" class="consult-submit">전문 컨설팅 및 맞춤 다이렉트 견적 리포트 수령</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Interactive JS Calculator Engine -->
+    <script>
+        function calculateDeductible() {
+            var costInput = document.getElementById('calc-repair-cost').value;
+            var ratio = parseFloat(document.getElementById('calc-ratio').value) / 100;
+            var surchargeLimit = parseInt(document.getElementById('calc-limit').value);
+
+            if (!costInput || costInput <= 0) {
+                alert("정확한 예상 수리비를 원 단위 숫자로만 온전하게 입력해 주세요.");
+                return;
+            }
+
+            var cost = parseInt(costInput);
+            var myShare = cost * ratio;
+            
+            // Set min and max limits based on chosen ratio
+            var minLimit = 200000;
+            var maxLimit = 500000;
+            
+            if (ratio === 0.3) {
+                minLimit = 300000;
+                maxLimit = 1000000;
+            }
+
+            // Apply deductible floor and ceiling bounds
+            if (myShare < minLimit) {
+                myShare = minLimit;
+            } else if (myShare > maxLimit) {
+                myShare = maxLimit;
+            }
+
+            // Deductible cannot exceed the actual repair cost
+            if (myShare > cost) {
+                myShare = cost;
+            }
+
+            var insuranceShare = cost - myShare;
+            if (insuranceShare < 0) {
+                insuranceShare = 0;
+            }
+
+            // Surcharge warning evaluation
+            var isOverSurcharge = "할증 안전 구간 (차후 갱신 요율 안정)";
+            var surchargeColor = "#16a34a"; // Green
+            if (insuranceShare > surchargeLimit) {
+                isOverSurcharge = "경고: 할증 기준 초과 (차기 자동차보험료 인상 우려군)";
+                surchargeColor = "#dc2626"; // Red
+            }
+
+            // Populate calculations dynamically
+            document.getElementById('res-total').innerText = cost.toLocaleString();
+            document.getElementById('res-my-share').innerText = myShare.toLocaleString();
+            document.getElementById('res-insurance-share').innerText = insuranceShare.toLocaleString();
+            
+            var surchargeEl = document.getElementById('res-surcharge');
+            surchargeEl.innerText = isOverSurcharge;
+            surchargeEl.style.color = surchargeColor;
+
+            // Trigger animation fade-in
+            var resultBox = document.getElementById('calculator-result');
+            resultBox.style.display = 'block';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var name = document.getElementById('usr-name').value;
+            var tel = document.getElementById('usr-tel').value;
+            var car = document.getElementById('usr-car').value;
+
+            if (name && tel && car) {
+                alert(name + " 고객님, 2026년형 차종별 맞춤 견적 및 자기부담금 분석 신청이 정상적으로 완료되었습니다. 기입해주신 연락처로 조속히 무료 가이드를 발송해 드리겠습니다.");
+                document.getElementById('insurance-lead-form').reset();
+            } else {
+                alert("필수 입력 항목을 정확하게 채웠는지 확인해 주시기 바랍니다.");
+            }
+        }
+    </script>
+  
